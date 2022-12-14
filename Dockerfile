@@ -1,14 +1,11 @@
-FROM eclipse-temurin:17-jdk-jammy as builder
-WORKDIR /opt/app
+FROM eclipse-temurin:17-jdk-focal
+ 
+WORKDIR /app
+ 
 COPY .mvn/ .mvn
 COPY mvnw pom.xml ./
-COPY ./src ./src
-RUN chmod +x mvnw
-RUN ./mvnw clean install
+RUN ./mvnw dependency:go-offline
  
+COPY src ./src
  
-FROM eclipse-temurin:17-jre-jammy
-WORKDIR /opt/app
-EXPOSE 8080
-COPY --from=builder /opt/app/target/*.jar /opt/app/*.jar
-ENTRYPOINT ["java", "-jar", "/opt/app/*.jar" ]
+CMD ["./mvnw", "spring-boot:run"]

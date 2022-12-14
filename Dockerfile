@@ -1,15 +1,14 @@
-# FROM openjdk
-
-# WORKDIR /app
-
-# COPY target/projetogrupoum-0.0.1-SNAPSHOT.jar /app/projetogrupoum.jar
-
-# ENTRYPOINT [ "java", "-jar", "spring-app.jar" ]
-
-FROM openjdk:17
-LABEL maintainer="csantos.pereira@icloud.com"
-VOLUME /tmp
+FROM eclipse-temurin:17-jdk-jammy as builder
+WORKDIR /opt/app
+COPY .mvn/ .mvn
+COPY mvnw pom.xml ./
+RUN ./mvnw dependency:go-offline
+COPY ./src ./src
+RUN ./mvnw clean install
+ 
+ 
+FROM eclipse-temurin:17-jre-jammy
+WORKDIR /opt/app
 EXPOSE 8080
-ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} projetogrupoum-0.0.1-SNAPSHOT.jar
-ENTRYPOINT ["java", "-Dspring.profiles.active=dev","-jar","projetogrupoum-0.0.1-SNAPSHOT.jar"]
+COPY --from=builder /opt/app/target/*.jar /opt/app/*.jar
+ENTRYPOINT ["java", "-jar", "/opt/app/*.jar" ]

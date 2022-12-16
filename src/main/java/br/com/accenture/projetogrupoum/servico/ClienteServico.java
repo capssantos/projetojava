@@ -43,9 +43,9 @@ public class ClienteServico {
 
     }
 
-    public ResponseEntity<Retorno> removerCliente(long IdCliente){
+    public ResponseEntity<Retorno> removerCliente(long idCliente){
 
-        clienteRepositorio.deleteById(IdCliente);
+        clienteRepositorio.deleteById(idCliente);
         retorno.setMsg("Agencia deletada com sucesso!");
         return new ResponseEntity<Retorno>(retorno, HttpStatus.OK);
 

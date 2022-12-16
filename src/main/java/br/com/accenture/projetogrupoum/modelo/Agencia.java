@@ -19,59 +19,60 @@ public class Agencia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "IdAgencia")
-    private Long IdAgencia;
+    private Long idAgencia;
 
     @Column(name = "NomeAgencia", nullable = false)
-    private String NomeAgencia;
+    private String nomeAgencia;
 
     @Column(name = "Endereco", nullable = false)
-    private String Endereco;
+    private String endereco;
 
     @Column(name = "Telefone", nullable = false)
-    private String Telefone;
+    private String telefone;
 
     public Agencia(){
 
     }
 
     @JsonCreator
-    public Agencia(@JsonProperty("idAgencia") Long IdAgencia, @JsonProperty("nomeAgencia") String NomeAgencia, @JsonProperty("endereco") String Endereco, @JsonProperty("telefone") String Telefone){
-        this.IdAgencia = IdAgencia;
-        this.NomeAgencia = NomeAgencia;
-        this.Endereco = Endereco;
-        this.Telefone = Telefone;
+    public Agencia(@JsonProperty("idAgencia") Long idAgencia, @JsonProperty("nomeAgencia") String nomeAgencia, @JsonProperty("endereco") String endereco, @JsonProperty("telefone") String telefone){
+        this.idAgencia = idAgencia;
+        this.nomeAgencia = nomeAgencia;
+        this.endereco = endereco;
+        this.telefone = telefone;
     }
+
 
     public Long getIdAgencia() {
-        return this.IdAgencia;
+        return this.idAgencia;
     }
 
-    public void setIdAgencia(Long IdAgencia) {
-        this.IdAgencia = IdAgencia;
+    public void setIdAgencia(Long idAgencia) {
+        this.idAgencia = idAgencia;
     }
 
     public String getNomeAgencia() {
-        return this.NomeAgencia;
+        return this.nomeAgencia;
     }
 
-    public void setNomeAgencia(String NomeAgencia) {
-        this.NomeAgencia = NomeAgencia;
+    public void setNomeAgencia(String nomeAgencia) {
+        this.nomeAgencia = nomeAgencia;
     }
 
     public String getEndereco() {
-        return this.Endereco;
+        return this.endereco;
     }
 
-    public void setEndereco(String Endereco) {
-        this.Endereco = Endereco;
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
     }
 
     public String getTelefone() {
-        return this.Telefone;
+        return this.telefone;
     }
 
-    public void setTelefone(String Telefone) {
-        this.Telefone = Telefone;
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
 
 
@@ -83,7 +84,7 @@ public class Agencia {
             return false;
         }
         Agencia agencia = (Agencia) o;
-        return Objects.equals(IdAgencia, agencia.IdAgencia);
+        return Objects.equals(idAgencia, agencia.idAgencia);
     }
 
     @Override
@@ -91,16 +92,14 @@ public class Agencia {
         return getClass().hashCode();
     }
 
-
     @Override
     public String toString() {
         return "{" +
-            " IdAgencia='" + getIdAgencia() + "'" +
-            ", NomeAgencia='" + getNomeAgencia() + "'" +
-            ", Endereco='" + getEndereco() + "'" +
-            ", Telefone='" + getTelefone() + "'" +
+            " idAgencia='" + getIdAgencia() + "'" +
+            ", nomeAgencia='" + getNomeAgencia() + "'" +
+            ", endereco='" + getEndereco() + "'" +
+            ", telefone='" + getTelefone() + "'" +
             "}";
     }
-
 
 }

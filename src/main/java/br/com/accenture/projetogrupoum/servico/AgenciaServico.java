@@ -43,9 +43,9 @@ public class AgenciaServico {
 
     }
 
-    public ResponseEntity<Retorno> removerAgencia(long IdAgencia){
+    public ResponseEntity<Retorno> removerAgencia(long idAgencia){
 
-        agenciaRepositorio.deleteById(IdAgencia);
+        agenciaRepositorio.deleteById(idAgencia);
         retorno.setMsg("Agencia deletada com sucesso!");
         return new ResponseEntity<Retorno>(retorno, HttpStatus.OK);
 

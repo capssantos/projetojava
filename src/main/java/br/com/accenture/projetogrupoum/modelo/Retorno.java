@@ -7,7 +7,6 @@ public class Retorno {
     
     private String msg;
 
-
     public String getMsg() {
         return this.msg;
     }

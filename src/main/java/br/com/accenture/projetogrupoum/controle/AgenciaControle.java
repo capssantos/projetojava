@@ -18,7 +18,7 @@ import br.com.accenture.projetogrupoum.servico.AgenciaServico;
 @RestController
 @CrossOrigin(origins = "*")
 public class AgenciaControle {
-
+    
     @Autowired
     private AgenciaServico agenciaServico;
 

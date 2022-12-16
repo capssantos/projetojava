@@ -22,18 +22,18 @@ public class AgenciaControle {
     @Autowired
     private AgenciaServico agenciaServico;
 
-    @DeleteMapping("/removeragencia/{IdAgencia}")
+    @DeleteMapping(value = "/removeragencia/{IdAgencia}", consumes = "application/json", produces = "application/json")
     public ResponseEntity<Retorno> removerAgencEntity(@PathVariable long IdAgencia){
         return agenciaServico.removerAgencia(IdAgencia);
     }
 
 
-    @PutMapping("/alteraragencia")
+    @PutMapping(value = "/alteraragencia", consumes = "application/json", produces = "application/json")
     public ResponseEntity<?> alterarAgenciaEntity(@RequestBody Agencia agencia){
         return agenciaServico.cadastroAgencia(agencia, "alterar");
     }
 
-    @PostMapping("/cadastraragencia")
+    @PostMapping(value = "/cadastraragencia", consumes = "application/json", produces = "application/json")
     public ResponseEntity<?> cadastrarAgenciaEntity(@RequestBody Agencia agencia){
         return agenciaServico.cadastroAgencia(agencia, "cadastrar");
     }

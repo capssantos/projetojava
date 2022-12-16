@@ -13,15 +13,16 @@ public class Agencia {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "IdAgencia")
     private Long IdAgencia;
 
-    @Column(nullable = false)
+    @Column(name = "NomeAgencia", nullable = false)
     private String NomeAgencia;
 
-    @Column(nullable = false)
+    @Column(name = "Endereco", nullable = false)
     private String Endereco;
 
-    @Column(nullable = false)
+    @Column(name = "Telefone", nullable = false)
     private String Telefone;
 
 

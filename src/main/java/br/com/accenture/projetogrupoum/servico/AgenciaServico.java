@@ -17,7 +17,7 @@ public class AgenciaServico {
 
     @Autowired
     private Retorno retorno;
-    
+
     public Iterable<Agencia> listar(){
         return agenciaRepositorio.findAll();
     }
@@ -43,9 +43,9 @@ public class AgenciaServico {
 
     }
 
-    public ResponseEntity<Retorno> removerAgencia(long idAgencia){
+    public ResponseEntity<Retorno> removerAgencia(long IdAgencia){
 
-        agenciaRepositorio.deleteById(idAgencia);
+        agenciaRepositorio.deleteById(IdAgencia);
         retorno.setMsg("Agencia deletada com sucesso!");
         return new ResponseEntity<Retorno>(retorno, HttpStatus.OK);
 

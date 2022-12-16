@@ -19,84 +19,84 @@ public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "IdCliente")
-    private Long idCliente;
+    private Long IdCliente;
 
     @Column(name = "ClienteNome",nullable = false)
-    private String clienteNome;
+    private String ClienteNome;
 
     @Column(name = "ClienteCPF",nullable = false)
-    private String clienteCPF;
+    private String ClienteCPF;
 
     @Column(name = "ClienteFone",nullable = false)
-    private String clienteFone;
+    private String ClienteFone;
 
     @Column(name = "IdContaCorrente",nullable = false)
-    private Long idContaCorrente;
+    private Long IdContaCorrente;
 
     @Column(name = "IdAgencia",nullable = false)
-    private Long idAgencia;
+    private Long IdAgencia;
 
     public Cliente(){
 
     }
 
     @JsonCreator
-    public Cliente(@JsonProperty("idCliente") Long idCliente, @JsonProperty("clienteNome") String clienteNome, @JsonProperty("clienteCPF") String clienteCPF, @JsonProperty("clienteFone") String clienteFone, @JsonProperty("idContaCorrente") Long idContaCorrente, @JsonProperty("idAgencia") Long idAgencia ){
-        this.idCliente = idCliente;
-        this.clienteNome = clienteNome;
-        this.clienteCPF = clienteCPF;
-        this.clienteFone = clienteFone;
-        this.idContaCorrente = idContaCorrente;
-        this.idAgencia = idAgencia;
+    public Cliente(@JsonProperty("idCliente") Long IdCliente, @JsonProperty("clienteNome") String ClienteNome, @JsonProperty("clienteCPF") String ClienteCPF, @JsonProperty("clienteFone") String ClienteFone, @JsonProperty("idContaCorrente") Long IdContaCorrente, @JsonProperty("idAgencia") Long IdAgencia ){
+        this.IdCliente = IdCliente;
+        this.ClienteNome = ClienteNome;
+        this.ClienteCPF = ClienteCPF;
+        this.ClienteFone = ClienteFone;
+        this.IdContaCorrente = IdContaCorrente;
+        this.IdAgencia = IdAgencia;
     }
 
 
     public Long getIdCliente() {
-        return this.idCliente;
+        return this.IdCliente;
     }
 
-    public void setIdCliente(Long idCliente) {
-        this.idCliente = idCliente;
+    public void setIdCliente(Long IdCliente) {
+        this.IdCliente = IdCliente;
     }
 
     public String getClienteNome() {
-        return this.clienteNome;
+        return this.ClienteNome;
     }
 
-    public void setClienteNome(String clienteNome) {
-        this.clienteNome = clienteNome;
+    public void setClienteNome(String ClienteNome) {
+        this.ClienteNome = ClienteNome;
     }
 
     public String getClienteCPF() {
-        return this.clienteCPF;
+        return this.ClienteCPF;
     }
 
-    public void setClienteCPF(String clienteCPF) {
-        this.clienteCPF = clienteCPF;
+    public void setClienteCPF(String ClienteCPF) {
+        this.ClienteCPF = ClienteCPF;
     }
 
     public String getClienteFone() {
-        return this.clienteFone;
+        return this.ClienteFone;
     }
 
-    public void setClienteFone(String clienteFone) {
-        this.clienteFone = clienteFone;
+    public void setClienteFone(String ClienteFone) {
+        this.ClienteFone = ClienteFone;
     }
 
     public Long getIdContaCorrente() {
-        return this.idContaCorrente;
+        return this.IdContaCorrente;
     }
 
-    public void setIdContaCorrente(Long idContaCorrente) {
-        this.idContaCorrente = idContaCorrente;
+    public void setIdContaCorrente(Long IdContaCorrente) {
+        this.IdContaCorrente = IdContaCorrente;
     }
 
     public Long getIdAgencia() {
-        return this.idAgencia;
+        return this.IdAgencia;
     }
 
-    public void setIdAgencia(Long idAgencia) {
-        this.idAgencia = idAgencia;
+    public void setIdAgencia(Long IdAgencia) {
+        this.IdAgencia = IdAgencia;
     }
 
 
@@ -108,26 +108,25 @@ public class Cliente {
             return false;
         }
         Cliente cliente = (Cliente) o;
-        return Objects.equals(idCliente, cliente.idCliente);
+        return Objects.equals(IdCliente, cliente.IdCliente);
     }
 
     @Override
     public int hashCode() {
         return getClass().hashCode();
     }
-
+    
 
     @Override
     public String toString() {
         return "{" +
-            " idCliente='" + getIdCliente() + "'" +
-            ", clienteNome='" + getClienteNome() + "'" +
-            ", clienteCPF='" + getClienteCPF() + "'" +
-            ", clienteFone='" + getClienteFone() + "'" +
-            ", idContaCorrente='" + getIdContaCorrente() + "'" +
-            ", idAgencia='" + getIdAgencia() + "'" +
+            " IdCliente='" + getIdCliente() + "'" +
+            ", ClienteNome='" + getClienteNome() + "'" +
+            ", ClienteCPF='" + getClienteCPF() + "'" +
+            ", ClienteFone='" + getClienteFone() + "'" +
+            ", IdContaCorrente='" + getIdContaCorrente() + "'" +
+            ", IdAgencia='" + getIdAgencia() + "'" +
             "}";
     }
-
 
 }

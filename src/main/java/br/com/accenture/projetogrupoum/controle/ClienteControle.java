@@ -23,8 +23,8 @@ public class ClienteControle {
     private ClienteServico clienteServico;
 
     @DeleteMapping("/removercliente/{IdCliente}")
-    public ResponseEntity<Retorno> removerAgencEntity(@PathVariable long idCliente){
-        return clienteServico.removerCliente(idCliente);
+    public ResponseEntity<Retorno> removerAgencEntity(@PathVariable long IdCliente){
+        return clienteServico.removerCliente(IdCliente);
     }
 
     @PutMapping("/alterarcliente")

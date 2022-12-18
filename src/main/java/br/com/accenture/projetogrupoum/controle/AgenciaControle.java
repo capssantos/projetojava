@@ -1,5 +1,7 @@
 package br.com.accenture.projetogrupoum.controle;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -41,6 +43,12 @@ public class AgenciaControle {
     @GetMapping("/allagencias")
     private Iterable<Agencia> listar(){
         return agenciaServico.listar();
+    }
+
+
+    @GetMapping("/agencia/{IdAgencia}")
+    private Optional<Agencia> getAgencEntity(@PathVariable long IdAgencia){
+        return agenciaServico.listaragencia(IdAgencia);
     }
     
     @GetMapping("/")

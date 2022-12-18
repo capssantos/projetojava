@@ -1,5 +1,7 @@
 package br.com.accenture.projetogrupoum.controle;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -46,4 +48,10 @@ public class ContaCorrenteControle{
   public ResponseEntity<Retorno> removerContaEntity(@PathVariable Long idContaCorrente){
     return contaCorrenteServico.removerContaCorrente(idContaCorrente);
   }
+
+  @GetMapping("/conta/{idContaCorrente}")
+  private Optional<ContaCorrente> getAgencEntity(@PathVariable long idContaCorrente){
+      return contaCorrenteServico.listarcontacorrente(idContaCorrente);
+  }
+  
 }

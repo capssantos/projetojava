@@ -1,5 +1,7 @@
 package br.com.accenture.projetogrupoum.controle;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -41,7 +43,12 @@ public class ClienteControle {
     private Iterable<Cliente> listar(){
         return clienteServico.listar();
     }
-    
+
+    @GetMapping("/cliente/{IdCliente}")
+    private Optional<Cliente> getAgencEntity(@PathVariable long IdCliente){
+        return clienteServico.listarcliente(IdCliente);
+    }
+
     @GetMapping("/breno")
     public String rota(){
         return "Alô mundo!";

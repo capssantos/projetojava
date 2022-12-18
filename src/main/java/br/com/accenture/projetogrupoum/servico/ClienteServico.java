@@ -1,5 +1,7 @@
 package br.com.accenture.projetogrupoum.servico;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +22,10 @@ public class ClienteServico {
 
     public Iterable<Cliente> listar(){
         return clienteRepositorio.findAll();
+    }
+
+    public Optional<Cliente> listarcliente(long idCliente){
+        return clienteRepositorio.findById(idCliente);
     }
 
     public ResponseEntity<?> cadastroCliente(Cliente cliente, String status){

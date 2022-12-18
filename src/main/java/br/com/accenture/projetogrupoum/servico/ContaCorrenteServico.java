@@ -1,5 +1,7 @@
 package br.com.accenture.projetogrupoum.servico;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +23,10 @@ public class ContaCorrenteServico {
     public Iterable<ContaCorrente> listar(){
 
         return contaCorrenteRepositorio.findAll();
+    }
+
+    public Optional<ContaCorrente> listarcontacorrente(long idContaCorrente){
+        return contaCorrenteRepositorio.findById(idContaCorrente);
     }
 
     public ResponseEntity<?> cadastroContaCorrente(ContaCorrente contaCorrente, String status){

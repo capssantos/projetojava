@@ -52,7 +52,7 @@ public class ClienteServico {
     public ResponseEntity<Retorno> removerCliente(long IdCliente){
 
         clienteRepositorio.deleteById(IdCliente);
-        retorno.setMsg("Agencia deletada com sucesso!");
+        retorno.setMsg("Cliente deletado com sucesso!");
         return new ResponseEntity<Retorno>(retorno, HttpStatus.OK);
 
     }

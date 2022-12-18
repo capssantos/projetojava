@@ -32,10 +32,10 @@ public class ContaCorrenteServico {
     public ResponseEntity<?> cadastroContaCorrente(ContaCorrente contaCorrente, String status){
         
         if(contaCorrente.getContaCorrenteNumero().equals("")){
-            retorno.setMsg("Numero da conta necessário.");
+            retorno.setMsg("Númeor da Conta vazio. Necessário Preenchimeto..");
             return new ResponseEntity<Retorno>(retorno,HttpStatus.BAD_REQUEST);
         } else if(contaCorrente.getContaCorrenteSaldo().equals("")){
-            retorno.setMsg("Saldo da conta necessário.");
+            retorno.setMsg("Saldo da Conta vazio. Necessário Preenchimeto.");
             return new ResponseEntity<Retorno>(retorno,HttpStatus.BAD_REQUEST);
         } else{
             if(status.equals("cadastrar")){
@@ -50,7 +50,7 @@ public class ContaCorrenteServico {
     public ResponseEntity<Retorno> removerContaCorrente(long idContaCorrente){
 
         contaCorrenteRepositorio.deleteById(idContaCorrente);
-        retorno.setMsg("Conta removida com sucesso.");
+        retorno.setMsg("Conta deletada com sucesso.");
         return new ResponseEntity<Retorno>(retorno,HttpStatus.OK);
     }
     

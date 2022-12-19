@@ -33,9 +33,6 @@ public class ExtratoServico {
         if (extrato.getOperacao().equals("")){
             retorno.setMsg("Operação vazio. Necessário Preenchimeto.");
             return new ResponseEntity<Retorno>(retorno, HttpStatus.BAD_REQUEST);
-        } else if (extrato.getDataMovimento().equals("")){
-            retorno.setMsg("Data de Movimentação vazio. Necessário Preenchimeto.");
-            return new ResponseEntity<Retorno>(retorno, HttpStatus.BAD_REQUEST);
         } else if (extrato.getValorOperacao().equals("")){
             retorno.setMsg("Valor vazio. Necessário Preenchimeto.");
             return new ResponseEntity<Retorno>(retorno, HttpStatus.BAD_REQUEST);

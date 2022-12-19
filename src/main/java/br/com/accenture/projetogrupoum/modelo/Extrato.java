@@ -3,6 +3,10 @@ package br.com.accenture.projetogrupoum.modelo;
 import java.sql.Timestamp;
 import java.util.Objects;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.Generated;
+import org.hibernate.annotations.GenerationTime;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -22,7 +26,7 @@ public class Extrato {
     @Column(nullable = false)
     private Long IdContaCorrente;
 
-    @Column(nullable = false)
+    @CreationTimestamp
     private Timestamp dataMovimento;
     
     @Column(nullable = false)

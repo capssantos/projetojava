@@ -8,24 +8,21 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "contacorrente")
 public class ContaCorrente {
 
     @Id
-    @Column(name = "idContaCorrente")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idContaCorrente;
 
-    @Column(name = "idAgencia", nullable = false)
+    @Column(nullable = false)
     private Long idAgencia;
 
-    @Column(name = "contaCorrenteNumero", nullable = false)
+    @Column(nullable = false)
     private String contaCorrenteNumero;
 
-    @Column(name = "contaCorrenteSaldo", nullable = false)
+    @Column(nullable = false)
     private Float contaCorrenteSaldo;
 
     public ContaCorrente(){

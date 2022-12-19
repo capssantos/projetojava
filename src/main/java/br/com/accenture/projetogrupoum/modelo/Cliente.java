@@ -10,30 +10,27 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Cliente")
 public class Cliente {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "IdCliente")
     private Long IdCliente;
 
-    @Column(name = "ClienteNome",nullable = false)
+    @Column(nullable = false)
     private String ClienteNome;
 
-    @Column(name = "ClienteCPF",nullable = false)
+    @Column(nullable = false)
     private String ClienteCPF;
 
-    @Column(name = "ClienteFone",nullable = false)
+    @Column(nullable = false)
     private String ClienteFone;
 
-    @Column(name = "IdContaCorrente",nullable = false)
+    @Column(nullable = false)
     private Long IdContaCorrente;
 
-    @Column(name = "IdAgencia",nullable = false)
+    @Column(nullable = false)
     private Long IdAgencia;
 
     public Cliente(){

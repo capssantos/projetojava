@@ -10,10 +10,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Agencia")
+// @Table(name = "Agencia")
 public class Agencia {
 
     @Id
@@ -21,13 +20,13 @@ public class Agencia {
     
     private Long IdAgencia;
 
-    @Column(name = "NomeAgencia", nullable = false)
+    @Column(nullable = false)
     private String NomeAgencia;
 
-    @Column(name = "Endereco", nullable = false)
+    @Column(nullable = false)
     private String Endereco;
 
-    @Column(name = "Telefone", nullable = false)
+    @Column(nullable = false)
     private String Telefone;
 
     public Agencia(){

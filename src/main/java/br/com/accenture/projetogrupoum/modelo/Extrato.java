@@ -1,8 +1,7 @@
 package br.com.accenture.projetogrupoum.modelo;
 
+import java.sql.Timestamp;
 import java.util.Objects;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -20,16 +19,16 @@ public class Extrato {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long IdExtrato;
 
-    @Column(name = "IdContaCorrente", nullable = false)
+    @Column(nullable = false)
     private Long IdContaCorrente;
 
-    @Column(name="dataMovimento", nullable = false)
-    private DateTimeFormat dataMovimento;
+    @Column(nullable = false)
+    private Timestamp dataMovimento;
     
-    @Column(name="Operacao", nullable = false)
+    @Column(nullable = false)
     private String Operacao;
 
-    @Column(name="valorOperacao", nullable = false)
+    @Column(nullable = false)
     private Float valorOperacao;
 
     public Extrato(){
@@ -37,7 +36,7 @@ public class Extrato {
     }
 
     @JsonCreator
-    public Extrato(@JsonProperty("IdExtrato") Long IdExtrato, @JsonProperty("IdContaCorrente") Long IdContaCorrente,  @JsonProperty("dataMovimento") DateTimeFormat dataMovimento,  @JsonProperty("Operacao") String Operacao, @JsonProperty("valorOperacao") Float valorOperacao){
+    public Extrato(@JsonProperty("idExtrato") Long IdExtrato, @JsonProperty("idContaCorrente") Long IdContaCorrente,  @JsonProperty("dataMovimento") Timestamp dataMovimento,  @JsonProperty("operacao") String Operacao, @JsonProperty("valorOperacao") Float valorOperacao){
         this.IdExtrato = IdExtrato;
         this.IdContaCorrente = IdContaCorrente;
         this.dataMovimento = dataMovimento;
@@ -62,11 +61,11 @@ public class Extrato {
         this.IdContaCorrente = IdContaCorrente;
     }
 
-    public DateTimeFormat getDataMovimento() {
+    public Timestamp  getDataMovimento() {
         return this.dataMovimento;
     }
 
-    public void setDataMovimento(DateTimeFormat dataMovimento) {
+    public void setDataMovimento(Timestamp  dataMovimento) {
         this.dataMovimento = dataMovimento;
     }
 
@@ -107,10 +106,10 @@ public class Extrato {
     @Override
     public String toString() {
         return "{" +
-            " IdExtrato='" + getIdExtrato() + "'" +
-            ", IdContaCorrente='" + getIdContaCorrente() + "'" +
+            " idExtrato='" + getIdExtrato() + "'" +
+            ", idContaCorrente='" + getIdContaCorrente() + "'" +
             ", dataMovimento='" + getDataMovimento() + "'" +
-            ", Operacao='" + getOperacao() + "'" +
+            ", operacao='" + getOperacao() + "'" +
             ", valorOperacao='" + getValorOperacao() + "'" +
             "}";
     }

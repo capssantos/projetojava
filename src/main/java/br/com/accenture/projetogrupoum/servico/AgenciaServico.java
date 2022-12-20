@@ -24,8 +24,8 @@ public class AgenciaServico {
         return agenciaRepositorio.findAll();
     }
 
-    public Optional<Agencia> listaragencia(long IdAgencia){
-        return agenciaRepositorio.findById(IdAgencia);
+    public Optional<Agencia> listaragencia(long idAgencia){
+        return agenciaRepositorio.findById(idAgencia);
     }
 
     public ResponseEntity<?> cadastroAgencia(Agencia agencia, String status){
@@ -49,9 +49,9 @@ public class AgenciaServico {
 
     }
 
-    public ResponseEntity<Retorno> removerAgencia(long IdAgencia){
+    public ResponseEntity<Retorno> removerAgencia(long idAgencia){
 
-        agenciaRepositorio.deleteById(IdAgencia);
+        agenciaRepositorio.deleteById(idAgencia);
         retorno.setMsg("Agencia deletada com sucesso!");
         return new ResponseEntity<Retorno>(retorno, HttpStatus.OK);
 

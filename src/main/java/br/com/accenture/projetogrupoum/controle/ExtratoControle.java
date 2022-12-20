@@ -25,8 +25,8 @@ public class ExtratoControle {
     private ExtratoServico extratoServico;
 
     @DeleteMapping(value = "removerextrato/{IdExtrato}", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<Retorno> removerExtrato(@PathVariable long IdExtrato){
-        return extratoServico.removerExtrato(IdExtrato);
+    public ResponseEntity<Retorno> removerExtrato(@PathVariable long idExtrato){
+        return extratoServico.removerExtrato(idExtrato);
     }
 
     @PutMapping(value = "/alterarextrato", consumes = "application/json", produces = "application/json")
@@ -45,8 +45,8 @@ public class ExtratoControle {
     }
 
     @GetMapping("/extrato/{IdExtrato}")
-    private Optional<Extrato> getExtratoEntity(@PathVariable long IdExtrato){
-        return extratoServico.listarextratos(IdExtrato);
+    private Optional<Extrato> getExtratoEntity(@PathVariable long idExtrato){
+        return extratoServico.listarextratos(idExtrato);
     }
 
     @GetMapping("/ana")

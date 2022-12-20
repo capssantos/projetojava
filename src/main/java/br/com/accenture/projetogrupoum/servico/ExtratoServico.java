@@ -24,8 +24,8 @@ public class ExtratoServico {
         return extratoRepositorio.findAll();
     }
 
-    public Optional<Extrato> listarextratos(long IdExtrato){
-        return extratoRepositorio.findById(IdExtrato);
+    public Optional<Extrato> listarextratos(long idExtrato){
+        return extratoRepositorio.findById(idExtrato);
     }
 
     public ResponseEntity<?> cadastroExtrato(Extrato extrato, String status){
@@ -46,8 +46,8 @@ public class ExtratoServico {
 
     }
 
-    public ResponseEntity<Retorno> removerExtrato(long IdExtrato){
-        extratoRepositorio.deleteById(IdExtrato);
+    public ResponseEntity<Retorno> removerExtrato(long idExtrato){
+        extratoRepositorio.deleteById(idExtrato);
         retorno.setMsg("Extrato deletado com sucesso!");
         return new ResponseEntity<Retorno>(retorno, HttpStatus.OK);
     }

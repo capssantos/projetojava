@@ -25,8 +25,8 @@ public class AgenciaControle {
     private AgenciaServico agenciaServico;
 
     @DeleteMapping(value = "/removeragencia/{IdAgencia}", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<Retorno> removerAgencEntity(@PathVariable long IdAgencia){
-        return agenciaServico.removerAgencia(IdAgencia);
+    public ResponseEntity<Retorno> removerAgencEntity(@PathVariable long idExtrato){
+        return agenciaServico.removerAgencia(idExtrato);
     }
 
 
@@ -46,9 +46,9 @@ public class AgenciaControle {
     }
 
 
-    @GetMapping("/agencia/{IdAgencia}")
-    private Optional<Agencia> getAgencEntity(@PathVariable long IdAgencia){
-        return agenciaServico.listaragencia(IdAgencia);
+    @GetMapping("/agencia/{idAgencia}")
+    private Optional<Agencia> getAgencEntity(@PathVariable long idExtrato){
+        return agenciaServico.listaragencia(idExtrato);
     }
     
     @GetMapping("/")

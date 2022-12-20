@@ -4,8 +4,6 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.Generated;
-import org.hibernate.annotations.GenerationTime;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -21,16 +19,16 @@ public class Extrato {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long IdExtrato;
+    private Long idExtrato;
 
     @Column(nullable = false)
-    private Long IdContaCorrente;
+    private Long idContaCorrente;
 
     @CreationTimestamp
     private Timestamp dataMovimento;
     
     @Column(nullable = false)
-    private String Operacao;
+    private String operacao;
 
     @Column(nullable = false)
     private Float valorOperacao;
@@ -40,45 +38,45 @@ public class Extrato {
     }
 
     @JsonCreator
-    public Extrato(@JsonProperty("idExtrato") Long IdExtrato, @JsonProperty("idContaCorrente") Long IdContaCorrente,  @JsonProperty("dataMovimento") Timestamp dataMovimento,  @JsonProperty("operacao") String Operacao, @JsonProperty("valorOperacao") Float valorOperacao){
-        this.IdExtrato = IdExtrato;
-        this.IdContaCorrente = IdContaCorrente;
+    public Extrato(@JsonProperty("idExtrato") Long idExtrato, @JsonProperty("idContaCorrente") Long idContaCorrente,  @JsonProperty("dataMovimento") Timestamp dataMovimento,  @JsonProperty("operacao") String operacao, @JsonProperty("valorOperacao") Float valorOperacao){
+        this.idExtrato = idExtrato;
+        this.idContaCorrente = idContaCorrente;
         this.dataMovimento = dataMovimento;
-        this.Operacao = Operacao;
+        this.operacao = operacao;
         this.valorOperacao = valorOperacao;
     }
 
 
     public Long getIdExtrato() {
-        return this.IdExtrato;
+        return this.idExtrato;
     }
 
-    public void setIdExtrato(Long IdExtrato) {
-        this.IdExtrato = IdExtrato;
+    public void setIdExtrato(Long idExtrato) {
+        this.idExtrato = idExtrato;
     }
 
     public Long getIdContaCorrente() {
-        return this.IdContaCorrente;
+        return this.idContaCorrente;
     }
 
-    public void setIdContaCorrente(Long IdContaCorrente) {
-        this.IdContaCorrente = IdContaCorrente;
+    public void setIdContaCorrente(Long idContaCorrente) {
+        this.idContaCorrente = idContaCorrente;
     }
 
-    public Timestamp  getDataMovimento() {
+    public Timestamp getDataMovimento() {
         return this.dataMovimento;
     }
 
-    public void setDataMovimento(Timestamp  dataMovimento) {
+    public void setDataMovimento(Timestamp dataMovimento) {
         this.dataMovimento = dataMovimento;
     }
 
     public String getOperacao() {
-        return this.Operacao;
+        return this.operacao;
     }
 
-    public void setOperacao(String Operacao) {
-        this.Operacao = Operacao;
+    public void setOperacao(String operacao) {
+        this.operacao = operacao;
     }
 
     public Float getValorOperacao() {
@@ -89,7 +87,6 @@ public class Extrato {
         this.valorOperacao = valorOperacao;
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (o == this)
@@ -98,25 +95,12 @@ public class Extrato {
             return false;
         }
         Extrato extrato = (Extrato) o;
-        return Objects.equals(IdExtrato, extrato.IdExtrato);
+        return Objects.equals(idExtrato, extrato.idExtrato);
     }
 
     @Override
     public int hashCode() {
         return getClass().hashCode();
     }
-
-
-    @Override
-    public String toString() {
-        return "{" +
-            " idExtrato='" + getIdExtrato() + "'" +
-            ", idContaCorrente='" + getIdContaCorrente() + "'" +
-            ", dataMovimento='" + getDataMovimento() + "'" +
-            ", operacao='" + getOperacao() + "'" +
-            ", valorOperacao='" + getValorOperacao() + "'" +
-            "}";
-    }
-
 
 }

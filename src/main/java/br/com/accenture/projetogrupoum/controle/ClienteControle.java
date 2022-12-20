@@ -25,9 +25,9 @@ public class ClienteControle {
     @Autowired
     private ClienteServico clienteServico;
 
-    @DeleteMapping("/removercliente/{IdCliente}")
-    public ResponseEntity<Retorno> removerAgencEntity(@PathVariable long IdCliente){
-        return clienteServico.removerCliente(IdCliente);
+    @DeleteMapping("/removercliente/{idCliente}")
+    public ResponseEntity<Retorno> removerAgencEntity(@PathVariable long idCliente){
+        return clienteServico.removerCliente(idCliente);
     }
 
     @PutMapping("/alterarcliente")
@@ -45,9 +45,9 @@ public class ClienteControle {
         return clienteServico.listar();
     }
 
-    @GetMapping("/cliente/{IdCliente}")
-    private Optional<Cliente> getAgencEntity(@PathVariable long IdCliente){
-        return clienteServico.listarcliente(IdCliente);
+    @GetMapping("/cliente/{idCliente}")
+    private Optional<Cliente> getAgencEntity(@PathVariable long idCliente){
+        return clienteServico.listarcliente(idCliente);
     }
 
     @GetMapping("/breno")

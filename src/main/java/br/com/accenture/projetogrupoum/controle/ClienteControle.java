@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.accenture.projetogrupoum.modelo.Cliente;
-import br.com.accenture.projetogrupoum.modelo.ContaCorrente;
 import br.com.accenture.projetogrupoum.modelo.Retorno;
 import br.com.accenture.projetogrupoum.servico.ClienteServico;
 
@@ -36,7 +35,7 @@ public class ClienteControle {
     }
 
     @PostMapping("/cadastrarcliente")
-    public ResponseEntity<?> cadastrarClienteEntity(@RequestBody Cliente cliente, @RequestBody ContaCorrente contaCorrente){
+    public ResponseEntity<?> cadastrarClienteEntity(@RequestBody Cliente cliente){
         return clienteServico.cadastroCliente(cliente, "cadastrar");
     }
 

@@ -24,17 +24,17 @@ public class ClienteControle {
     @Autowired
     private ClienteServico clienteServico;
 
-    @DeleteMapping("/removercliente/{idCliente}")
+    @DeleteMapping(value = "/removercliente/{idCliente}", consumes = "application/json", produces = "application/json")
     public ResponseEntity<Retorno> removerAgencEntity(@PathVariable long idCliente){
         return clienteServico.removerCliente(idCliente);
     }
 
-    @PutMapping("/alterarcliente")
+    @PutMapping(value = "/alterarcliente", consumes = "application/json", produces = "application/json")
     public ResponseEntity<?> alterarClienteEntity(@RequestBody Cliente cliente){
         return clienteServico.cadastroCliente(cliente, "alterar");
     }
 
-    @PostMapping("/cadastrarcliente")
+    @PostMapping(value = "/cadastrarcliente", consumes = "application/json", produces = "application/json")
     public ResponseEntity<?> cadastrarClienteEntity(@RequestBody Cliente cliente){
         return clienteServico.cadastroCliente(cliente, "cadastrar");
     }

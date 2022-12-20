@@ -3,16 +3,17 @@ package br.com.accenture.projetogrupoum.modelo;
 import java.sql.Timestamp;
 import java.util.Objects;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 import org.hibernate.annotations.CreationTimestamp;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 
 @Entity
 public class Extrato {

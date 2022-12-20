@@ -34,17 +34,17 @@ public class ContaCorrenteControle{
     return contaCorrenteServico.listar();
   }
 
-  @PostMapping("/cadastratarconta")
+  @PostMapping(value = "/cadastratarconta", consumes = "application/json", produces = "application/json")
   public ResponseEntity<?> cadastrarContaCorrente(@RequestBody ContaCorrente contaCorrente){
     return contaCorrenteServico.cadastroContaCorrente(contaCorrente, "cadastrar");
   }
 
-  @PutMapping("/alteraconta")
+  @PutMapping(value = "/alteraconta", consumes = "application/json", produces = "application/json")
   public ResponseEntity<?> alterarContaCorrente(@RequestBody ContaCorrente contaCorrente){
     return contaCorrenteServico.cadastroContaCorrente(contaCorrente, "alterar");
   }
 
-  @DeleteMapping("/removerconta/{idContaCorrente}")
+  @DeleteMapping(value = "/removerconta/{idContaCorrente}", consumes = "application/json", produces = "application/json")
   public ResponseEntity<Retorno> removerContaEntity(@PathVariable Long idContaCorrente){
     return contaCorrenteServico.removerContaCorrente(idContaCorrente);
   }

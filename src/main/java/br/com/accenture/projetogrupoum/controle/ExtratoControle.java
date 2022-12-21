@@ -29,10 +29,10 @@ public class ExtratoControle {
         return extratoServico.removerExtrato(idExtrato);
     }
 
-    @PutMapping(value = "/alterarextrato", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<?> alterarExtraEntraEntity(@RequestBody Extrato extrato){
-        return extratoServico.cadastroExtrato(extrato, "alterar");
-    }
+    // @PutMapping(value = "/alterarextrato", consumes = "application/json", produces = "application/json")
+    // public ResponseEntity<?> alterarExtraEntraEntity(@RequestBody Extrato extrato){
+    //     return extratoServico.cadastroExtrato(extrato, "alterar");
+    // }
 
     @PostMapping(value = "/cadastrarextrato", consumes = "application/json", produces = "application/json")
     public ResponseEntity<?> cadastrarExtraEntity(@RequestBody Extrato extrato){

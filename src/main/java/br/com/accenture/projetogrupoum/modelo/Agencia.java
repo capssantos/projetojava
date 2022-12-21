@@ -7,28 +7,32 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 @Entity
-// @Table(name = "Agencia")
+@Table(name = "agencia")
 public class Agencia {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id_agencia")
     private Long idAgencia;
 
-    @Column(nullable = false)
+    @Column(name = "nome_agencia",nullable = false, length = 45)
     private String nomeAgencia;
 
-    @Column(nullable = false)
+    @Column(name = "endereco",nullable = false, length = 150)
     private String endereco;
 
-    @Column(nullable = false)
+    @Column(name = "telefone",nullable = false, length = 15)
     private String telefone;
 
+
+    
     public Agencia(){
 
     }

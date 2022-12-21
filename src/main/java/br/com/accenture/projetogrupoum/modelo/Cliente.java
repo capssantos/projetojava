@@ -4,42 +4,51 @@ import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 @Entity
+@Table(name = "cliente")
 public class Cliente {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_cliente")
     private Long idCliente;
 
-    @Column(nullable = false)
+    @Column(name = "cliente_nome",nullable = false, length = 80)
     private String clienteNome;
 
-    @Column(nullable = false)
+    @Column(name = "cliente_cpf",nullable = false, length = 14)
     private String clienteCPF;
 
-    @Column(nullable = false)
+    @Column(name = "cliente_fone",nullable = false, length = 20)
     private String clienteFone;
 
-    @Column(nullable = false)
-    private Long idContaCorrente;
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="id_conta_corrente")
+    private ContaCorrente idContaCorrente;
 
-    @Column(nullable = false)
-    private Long idAgencia;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="id_agencia")
+    private Agencia idAgencia;
 
     public Cliente(){
 
     }
 
     @JsonCreator
-    public Cliente(@JsonProperty("idCliente") Long idCliente, @JsonProperty("clienteNome") String clienteNome, @JsonProperty("clienteCPF") String clienteCPF, @JsonProperty("clienteFone") String clienteFone, @JsonProperty("idContaCorrente") Long idContaCorrente, @JsonProperty("idAgencia") Long idAgencia ){
+    public Cliente(@JsonProperty("idCliente") Long idCliente, @JsonProperty("clienteNome") String clienteNome, @JsonProperty("clienteCPF") String clienteCPF, @JsonProperty("clienteFone") String clienteFone, @JsonProperty("idContaCorrente") ContaCorrente idContaCorrente, @JsonProperty("idAgencia") Agencia idAgencia ){
         this.idCliente = idCliente;
         this.clienteNome = clienteNome;
         this.clienteCPF = clienteCPF;
@@ -81,22 +90,21 @@ public class Cliente {
         this.clienteFone = clienteFone;
     }
 
-    public Long getIdContaCorrente() {
+    public ContaCorrente getIdContaCorrente() {
         return this.idContaCorrente;
     }
 
-    public void setIdContaCorrente(Long idContaCorrente) {
+    public void setIdContaCorrente(ContaCorrente idContaCorrente) {
         this.idContaCorrente = idContaCorrente;
     }
 
-    public Long getIdAgencia() {
+    public Agencia getIdAgencia() {
         return this.idAgencia;
     }
 
-    public void setIdAgencia(Long idAgencia) {
+    public void setIdAgencia(Agencia idAgencia) {
         this.idAgencia = idAgencia;
     }
-
 
     @Override
     public boolean equals(Object o) {
@@ -113,7 +121,6 @@ public class Cliente {
     public int hashCode() {
         return getClass().hashCode();
     }
-
 
     @Override
     public String toString() {

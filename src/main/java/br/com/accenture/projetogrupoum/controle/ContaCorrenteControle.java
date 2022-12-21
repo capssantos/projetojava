@@ -53,5 +53,20 @@ public class ContaCorrenteControle{
   private Optional<ContaCorrente> getAgencEntity(@PathVariable long idContaCorrente){
       return contaCorrenteServico.listarcontacorrente(idContaCorrente);
   }
-  
+
+  @GetMapping("/sacar/{idContaCorrente}/{valor}")
+  public ResponseEntity<?> sacaResponseEntity(@PathVariable long idContaCorrente, Double valor){
+      return contaCorrenteServico.sacarEntity(idContaCorrente, valor);
+  }
+
+  @GetMapping("/depositar/{idContaCorrente}/{valor}")
+  public ResponseEntity<?> depositarResponseEntity(@PathVariable long idContaCorrente, Double valor){
+      return contaCorrenteServico.depositarEntity(idContaCorrente, valor);
+  }
+
+  @GetMapping("/transferir/{idContaOrigem}/{idContaDestino}/{valor}")
+  public ResponseEntity<?> transferirResponseEntity(@PathVariable long idContaOrigem, long idContaDestino, Double valor){
+      return contaCorrenteServico.transferirEntity(idContaOrigem, idContaDestino, valor);
+  }
+
 }

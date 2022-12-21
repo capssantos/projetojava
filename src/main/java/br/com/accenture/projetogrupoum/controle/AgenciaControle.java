@@ -53,7 +53,7 @@ public class AgenciaControle {
     
     @GetMapping("/")
     public String rota(){
-        return "Hello World";
+        return "GRUPO UM";
     }
 
 }
